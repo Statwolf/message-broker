@@ -1,0 +1,35 @@
+{
+  "name": "message-broker",
+  "version": "0.0.0",
+  "description": "The statwolf message broker",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "develop": "gulp develop",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.statwolf.com/statwolf/message-broker"
+  },
+  "author": "Pasquale Boemio <boemianrapsodi@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "require-dir": "^0.3.2",
+    "uuid": "^3.1.0",
+    "ws": "^3.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-mocha": "^4.3.1",
+    "jshint": "^2.9.5",
+    "mocha": "^4.0.1",
+    "sandboxed-module": "^2.0.3",
+    "sinon": "^4.1.2",
+    "sinon-chai": "^2.14.0"
+  }
+}
