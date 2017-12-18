@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "service": "node service.js",
     "develop": "gulp develop",
     "test": "gulp test"
   },
@@ -15,6 +16,7 @@
   "author": "Pasquale Boemio <boemianrapsodi@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "node-windows": "^0.1.14",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "require-dir": "^0.3.2",
