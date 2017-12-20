@@ -1,3 +1,3 @@
 const mb = require('./lib/broker');
 
-mb();
+mb(process.argv[2]);
