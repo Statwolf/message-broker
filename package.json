@@ -1,10 +1,11 @@
 {
-  "name": "message-broker",
+  "name": "@statwolf/message-broker",
   "version": "0.0.4",
   "description": "The statwolf message broker",
-  "main": "index.js",
+  "main": "bin/index.js",
+  "bin": "bin/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node bin/index.js",
     "service": "node service.js",
     "develop": "gulp develop",
     "test": "gulp test"
