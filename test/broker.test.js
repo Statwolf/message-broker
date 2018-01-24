@@ -34,7 +34,7 @@ describe('The broker module', function() {
     bodyParser.json.returns(mw);
 
     env = {
-      PORT: 'a port'
+      MB_PORT: 'a port'
     };
 
     protocols = {};
@@ -92,7 +92,7 @@ describe('The broker module', function() {
   it('should put the express app listening', function(done) {
     mut();
 
-    expect(app.listen).to.be.calledWith(env.PORT);
+    expect(app.listen).to.be.calledWith(env.MB_PORT);
     done();
   });
 
