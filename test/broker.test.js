@@ -1,5 +1,4 @@
-﻿const mocha = require('mocha');
-const chai = require('chai');
+﻿const chai = require('chai');
 const expect = chai.expect;
 const sinon = require('sinon');
 chai.use(require('sinon-chai'));
@@ -205,7 +204,7 @@ describe('The broker module', function() {
   it('should handle the error event', function(done) {
     protocols.filename = {
       name: 'test',
-      events: function(info) {
+      events: function() {
       }
     };
 

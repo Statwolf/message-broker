@@ -7,8 +7,8 @@
   "scripts": {
     "start": "node bin/index.js",
     "service": "node service.js",
-    "develop": "gulp develop",
-    "test": "gulp test"
+    "develop": "nodemon --watch 'test/**/*.test.js' --watch 'lib/**/*.js' --exec npm test",
+    "test": "eslint lib/ test/ && mocha 'test/**/*.test.js'"
   },
   "repository": {
     "type": "git",
@@ -25,11 +25,9 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "gulp": "^3.9.1",
-    "gulp-jshint": "^2.0.4",
-    "gulp-mocha": "^4.3.1",
-    "jshint": "^2.9.5",
+    "eslint": "^5.2.0",
     "mocha": "^4.0.1",
+    "nodemon": "^1.18.3",
     "sandboxed-module": "^2.0.3",
     "sinon": "^4.1.2",
     "sinon-chai": "^2.14.0"
