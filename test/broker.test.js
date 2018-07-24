@@ -202,6 +202,24 @@ describe('The broker module', function() {
     }));
   });
 
+  it('should handle the error event', function(done) {
+    protocols.filename = {
+      name: 'test',
+      events: function(info) {
+      }
+    };
+
+    mut();
+    wss.on.getCall(0).args[1](socket);
+    socket.on.getCall(0).args[1](JSON.stringify({
+      type: 'join',
+      room: 'test'
+    }));
+    expect(socket.on).to.be.calledWith('error');
+    expect(socket.on.getCall(2).args[1]).to.be.equal(console.error);
+    done();
+  });
+
   it('should propagate the onclose event', function(done) {
     protocols.filename = {
       name: 'test',
