@@ -1,5 +1,4 @@
-﻿const mocha = require('mocha');
-const chai = require('chai');
+﻿const chai = require('chai');
 const expect = chai.expect;
 const sinon = require('sinon');
 chai.use(require('sinon-chai'));
@@ -20,9 +19,12 @@ describe('The broker module', function() {
   let http;
   let socket;
   let ee;
+  let error;
   let uuid;
 
   beforeEach(function(done) {
+    error = function() {};
+
     socket = {};
     socket.on = sinon.spy();
     socket.send = sinon.spy();
@@ -80,6 +82,9 @@ describe('The broker module', function() {
         'uuid/v4': uuid
       },
       globals: {
+        console: {
+          error
+        },
         process: {
           env
         }
@@ -200,6 +205,24 @@ describe('The broker module', function() {
       type: 'join',
       room: 'test'
     }));
+  });
+
+  it('should handle the error event', function(done) {
+    protocols.filename = {
+      name: 'test',
+      events: function() {
+      }
+    };
+
+    mut();
+    wss.on.getCall(0).args[1](socket);
+    socket.on.getCall(0).args[1](JSON.stringify({
+      type: 'join',
+      room: 'test'
+    }));
+    expect(socket.on).to.be.calledWith('error');
+    expect(socket.on.getCall(2).args[1]).to.be.equal(error);
+    done();
   });
 
   it('should propagate the onclose event', function(done) {
