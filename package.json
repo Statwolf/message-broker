@@ -1,5 +1,5 @@
 {
-  "name": "@statwolf/message-broker",
+  "name": "statwolf-message-broker",
   "version": "0.0.6",
   "description": "The statwolf message broker",
   "main": "bin/index.js",
