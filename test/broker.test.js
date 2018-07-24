@@ -19,9 +19,12 @@ describe('The broker module', function() {
   let http;
   let socket;
   let ee;
+  let error;
   let uuid;
 
   beforeEach(function(done) {
+    error = function() {};
+
     socket = {};
     socket.on = sinon.spy();
     socket.send = sinon.spy();
@@ -79,6 +82,9 @@ describe('The broker module', function() {
         'uuid/v4': uuid
       },
       globals: {
+        console: {
+          error
+        },
         process: {
           env
         }
@@ -215,7 +221,7 @@ describe('The broker module', function() {
       room: 'test'
     }));
     expect(socket.on).to.be.calledWith('error');
-    expect(socket.on.getCall(2).args[1]).to.be.equal(console.error);
+    expect(socket.on.getCall(2).args[1]).to.be.equal(error);
     done();
   });
 
