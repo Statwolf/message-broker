@@ -1,4 +1,4 @@
-from node:14.15.1
+from node:14.15.1-slim
 
 add package.json /source/package.json
 add package-lock.json /source/package-lock.json
