@@ -5,10 +5,7 @@
   "main": "bin/index.js",
   "bin": "bin/index.js",
   "scripts": {
-    "start": "node bin/index.js",
-    "service": "node service.js",
-    "develop": "nodemon --watch 'test/**/*.test.js' --watch 'lib/**/*.js' --exec npm test",
-    "test": "eslint lib/ test/ && mocha 'test/**/*.test.js'"
+    "build": "webpack --mode development"
   },
   "repository": {
     "type": "git",
@@ -16,20 +13,13 @@
   },
   "author": "Pasquale Boemio <boemianrapsodi@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "require-dir": "^0.3.2",
-    "uuid": "^3.1.0",
-    "ws": "^3.3.2"
-  },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "eslint": "^5.2.0",
-    "mocha": "^4.0.1",
-    "nodemon": "^1.18.3",
-    "sandboxed-module": "^2.0.3",
-    "sinon": "^4.1.2",
-    "sinon-chai": "^2.14.0"
+    "body-parser": "1.18.2",
+    "express": "4.16.2",
+    "require-dir": "0.3.2",
+    "uuid": "3.1.0",
+    "webpack": "5.6.0",
+    "webpack-cli": "4.2.0",
+    "ws": "3.3.2"
   }
 }
