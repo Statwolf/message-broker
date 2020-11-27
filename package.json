@@ -2,8 +2,6 @@
   "name": "statwolf-message-broker",
   "version": "0.0.6",
   "description": "The statwolf message broker",
-  "main": "bin/index.js",
-  "bin": "bin/index.js",
   "scripts": {
     "build": "webpack --mode development"
   },
@@ -16,7 +14,6 @@
   "devDependencies": {
     "body-parser": "1.18.2",
     "express": "4.16.2",
-    "require-dir": "0.3.2",
     "uuid": "3.1.0",
     "webpack": "5.6.0",
     "webpack-cli": "4.2.0",
