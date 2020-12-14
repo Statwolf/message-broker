@@ -9,5 +9,5 @@ add webpack.config.js /source/webpack.config.js
 add src /source/src
 run cd /source && npm run build && mv dist /app && cd / && rm -rfv /source
 
-expose 9999
+expose 80
 cmd cd /app && node ./app.bundle.js

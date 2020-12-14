@@ -24,7 +24,7 @@ wss.on('connection', function(socket) {
       socket.send(JSON.stringify(data));
     };
 
-    emitter.emit(`${ room }::join`, proxy);
+    emitter.emit(`${ room }::join`, proxy, message);
 
     socket.on('close', function() {
       emitter.emit(`${ room }::close`, id);
