@@ -8,15 +8,11 @@ const factory = function(proxy) {
     const clients = _topics[request.params.topic];
     if(clients != null) {
       clients.forEach(function(client) {
-        try {
-          client.send({
-            type: 'content',
-            topic: request.params.topic,
-            log: request.body
-          })
-        } catch() {
-
-        }
+        client.send({
+          type: 'content',
+          topic: request.params.topic,
+          log: request.body
+        })
       });
     }
 

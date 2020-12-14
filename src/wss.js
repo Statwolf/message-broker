@@ -19,6 +19,12 @@ wss.on('connection', function(socket) {
       id
     };
     proxy.send = function(data) {
+      if(socket.readyState !== socket.OPEN) {
+        emitter.emit(`${ room }::close`, id);
+
+        return;
+      }
+
       data.type = `${ room }::${ data.type }`;
 
       socket.send(JSON.stringify(data));
